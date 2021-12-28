@@ -5,6 +5,14 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "@babel/plugin-transform-runtime"
+    "@babel/plugin-transform-runtime",
+    [
+      "import",
+      {
+        "libraryName": "antd-mobile",
+        "libraryDirectory": "es/components",
+        "style": false
+      }
+    ]
   ]
 }

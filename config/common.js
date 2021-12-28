@@ -5,7 +5,6 @@ const { name } = require('../package.json');
 const paths = require('./path');
 
 const { src, build, publicSrc } = paths;
-
 const sassLoadConfig = [
   'style-loader',
   'css-loader',
@@ -64,9 +63,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  require('autoprefixer'),
-                ],
+                plugins: [require('autoprefixer')],
               },
             },
           },
@@ -78,7 +75,7 @@ module.exports = {
         use: sassLoadConfig,
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
+        test: /\.(jpe?g|png|gif|svg|xml)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -92,7 +89,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|mp3|mp4)$/,
+        test: /\.(woff|woff2|eot|ttf|mp3|mp4|xml)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -105,9 +102,11 @@ module.exports = {
       },
       {
         test: /\.(ts|tsx)?$/,
-        use: [{
-          loader: 'babel-loader',
-        }],
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+        ],
         exclude: /(node_modules)/,
       },
     ],

@@ -18,14 +18,14 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     // 关闭eslint配置中与prettier冲突的格式化规则
-    'prettier',
+    'plugin:prettier/recommended',
   ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['react', 'import', 'prettier', '@typescript-eslint'],
+  plugins: ['import'],
   settings: {
     react: {
       createClass: 'createReactClass',
@@ -34,6 +34,8 @@ module.exports = {
     },
   },
   rules: {
+    // 是否开启prettier配置
+    'prettier/prettier': ['warn'],
     /**
      * eslint-react规则（包含tslint规则和react相关规则）
      * 注释中以‘CUSTOM’结尾的规则为可自定义规则（具体项目可自行调整）
@@ -139,7 +141,7 @@ module.exports = {
 
     // ============其他=============
     'prefer-const': 2, // 要求使用 const 声明那些声明后不再被修改的变量
-    'one-var-declaration-per-line': 2, // 禁止一次性定义多个变量
+    'one-var-declaration-per-line': 0, // 禁止一次性定义多个变量
     'key-spacing': [2, { afterColon: true }], // object的key的“:”之后至少有一个空格
     'import/order': 2, // import引入按照一定顺序
     // 'import/no-default-export': 2, // 不允许defalut export  --CUSTOM
@@ -152,7 +154,7 @@ module.exports = {
     '@typescript-eslint/no-this-alias': 1, // 禁止对this使用别名  --CUSTOM
     '@typescript-eslint/no-namespace': 1, // 禁止使用自定义TypeScript模块和名称空间  --CUSTOM
     '@typescript-eslint/no-unused-vars': [
-      2,
+      1,
       { vars: 'all', args: 'none', ignoreRestSiblings: true },
     ], // 提示未使用的变量  --CUSTOM
     'no-undef': 0, // 禁用未声明的变量，除非它们在 /*global */ 注释中被提到 （原因：全局变量较常用，定义在global.d.ts中即可）
@@ -185,7 +187,7 @@ module.exports = {
     'react/jsx-equals-spacing': 1, // 属性赋值不允许有空格
     'react/jsx-first-prop-new-line': 1, // 只有一个属性情况下单行
     'react/jsx-key': 2, // 强制遍历出来的jsx加key
-    'react/jsx-max-props-per-line': [1, { maximum: 1 }], // 每行最多几个属性
+    'react/jsx-max-props-per-line': [0, { maximum: 1 }], // 每行最多几个属性
     'react/jsx-no-comment-textnodes': 1, // 检查jsx注释
     'react/jsx-pascal-case': 1, // 检查jsx标签名规范
     'react/jsx-wrap-multilines': [
