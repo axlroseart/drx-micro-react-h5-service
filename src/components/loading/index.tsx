@@ -1,9 +1,22 @@
 import React from 'react';
 import './index.scss';
 
-class Loading extends React.PureComponent {
+class Loading extends React.Component<
+  {
+    label: string;
+  },
+  unknown
+> {
+  constructor(props: any) {
+    super(props);
+  }
   render() {
-    return '<div>loading...</div>';
+    const { label } = this.props;
+    return (
+      <div className="loading-index" data-testid="loading-div-test">
+        {label}
+      </div>
+    );
   }
 }
 

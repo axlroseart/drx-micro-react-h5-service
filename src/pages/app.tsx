@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Bottom } from '../components/bottom';
 import { routes } from '../pages/router';
+import Loading from '../components/loading/index';
 import '@/assets/styles/common.scss';
 
 // h5 web app layout
@@ -13,6 +14,7 @@ const App: FC = () => (
           <Route {...val} key={`route ${val.path}`} />
         ))}
       </Routes>
+      <Loading label="loading component" />
     </div>
     <div className="bottom">
       <Bottom />

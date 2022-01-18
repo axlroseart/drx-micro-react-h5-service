@@ -1,0 +1,17 @@
+.loading-index {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    height: 140px;
+    text-align: center;
+    font-size: 42px;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: #666 1px solid;
+    border-radius: 12px;
+}
