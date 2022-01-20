@@ -7,6 +7,7 @@ import '@testing-library/jest-dom';
 it('render without crash - Loading', () => {
   render(<Loading label={''} />);
   // screen.debug();
+  // screen.getByRole('');
 });
 
 it('render loading component correctly', () => {
@@ -29,7 +30,9 @@ it('shoud be in the document', () => {
 
 it('should render error tip when button clicked', () => {
   render(<Loading label="" />);
-  const button = screen.getByTestId('loading-button');
+  const button = screen.getByRole('button', {
+    name: /showError/i,
+  });
   const onClick = jest.fn();
 
   button.onclick = onClick;

@@ -34,7 +34,9 @@ class Loading extends React.Component<
           onClick={() => {
             this.changeStatus(true);
           }}
-        />
+        >
+          showError
+        </button>
         {this.state.isError && (
           <div data-testid="error-tip">
             <p>something went wrong</p>
