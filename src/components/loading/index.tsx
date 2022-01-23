@@ -1,6 +1,5 @@
 import React from 'react';
 import './index.scss';
-import PageNotFound from 'src/components/pageNotFound';
 class Loading extends React.Component<
   {
     label: string;
@@ -29,20 +28,6 @@ class Loading extends React.Component<
         <div className="loading-index" data-testid="loading-div-test">
           {label}
         </div>
-        <button
-          data-testid="loading-button"
-          onClick={() => {
-            this.changeStatus(true);
-          }}
-        >
-          showError
-        </button>
-        {this.state.isError && (
-          <div data-testid="error-tip">
-            <p>something went wrong</p>
-          </div>
-        )}
-        {!this.state.isError && <PageNotFound />}
       </>
     );
   }

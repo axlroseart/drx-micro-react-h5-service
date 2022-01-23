@@ -126,7 +126,7 @@ module.exports = {
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    hot: false,
-    liveReload: false,
+    hot: true,
+    liveReload: true,
   },
 };

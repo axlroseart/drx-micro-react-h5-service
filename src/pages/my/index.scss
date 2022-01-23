@@ -1,0 +1,13 @@
+.login-input-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  input {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  button {
+    margin: 0 auto;
+  }
+}
