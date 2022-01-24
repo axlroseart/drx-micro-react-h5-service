@@ -11,6 +11,10 @@ export const routes: RouteProps[] = [
     element: <Index />,
   },
   {
+    path: '/home',
+    element: <Index />,
+  },
+  {
     path: '/my',
     element: <My />,
   },

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import { AppContext } from '../../components/context';
-import { ACTIONS } from '../../components/context/reducer';
+import { AppContext } from '../../context';
+import { ACTIONS } from '../../context/reducer';
 import './index.scss';
 
 const My = () => {

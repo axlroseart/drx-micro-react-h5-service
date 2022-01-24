@@ -11,17 +11,6 @@ function PageNotFound() {
 
   return (
     <>
-      <button
-        name="cool-button"
-        onClick={() => {
-          changeStatus(true);
-        }}
-      />
-      {isCool && (
-        <div>
-          <p>cool</p>
-        </div>
-      )}
       <div className="page-not-found">
         <h1>404 Not Found.</h1>
         <img src={logo} />

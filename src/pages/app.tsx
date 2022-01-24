@@ -1,17 +1,13 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Bottom } from '../components/bottom';
 import { routes } from '../pages/router';
 import Loading from '../components/loading';
-import { AppProvider } from '../components/context';
-import { initialState } from '../components/context/reducer';
+import { AppProvider } from '../context';
 import '@/assets/styles/common.scss';
 
 // h5 web app layout
 const App: FC = () => {
-  useEffect(() => {
-    console.log(initialState);
-  }, [initialState]);
   return (
     <AppProvider>
       <div className="app">
@@ -21,7 +17,7 @@ const App: FC = () => {
               <Route {...val} key={`route ${val.path}`} />
             ))}
           </Routes>
-          {initialState?.isLogin && <Loading label="loading component" />}
+          {<Loading label="loading component" />}
         </div>
         <div className="bottom">
           <Bottom />
