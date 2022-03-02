@@ -7,24 +7,22 @@ import { AppProvider } from '../context';
 import '@/assets/styles/common.scss';
 
 // h5 web app layout
-const App: FC = () => {
-  return (
-    <AppProvider>
-      <div className="app">
-        <div className="body">
-          <Routes>
-            {routes.map((val) => (
-              <Route {...val} key={`route ${val.path}`} />
-            ))}
-          </Routes>
-          {<Loading label="loading component" />}
-        </div>
-        <div className="bottom">
-          <Bottom />
-        </div>
+const App: FC = () => (
+  <AppProvider>
+    <div className="app">
+      <div className="body">
+        <Routes>
+          {routes.map((val) => (
+            <Route {...val} key={`route ${val.path}`} />
+          ))}
+        </Routes>
+        {<Loading label="loading component" />}
       </div>
-    </AppProvider>
-  );
-};
+      <div className="bottom">
+        <Bottom />
+      </div>
+    </div>
+  </AppProvider>
+);
 
 export default App;
