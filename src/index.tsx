@@ -15,7 +15,7 @@ const render = (props: { container?: any }) => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? '/react-h5' : '/'}>
-        <React.Suspense fallback={<Loading />}>
+        <React.Suspense fallback={<Loading label='loading' />}>
           <ErrorBoundary>
             <App />
           </ErrorBoundary>
